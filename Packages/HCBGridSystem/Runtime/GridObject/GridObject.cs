@@ -7,6 +7,7 @@ namespace HCB.GridSystem
 {
     public class GridObject : PlaceableBase
     {
+       
         [Header("Grid Object")]
         [SerializeField] private GridObjectData _gridObjectData;
         public GridObjectData GridObjectData => _gridObjectData;

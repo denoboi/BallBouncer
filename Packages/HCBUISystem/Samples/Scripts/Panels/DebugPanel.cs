@@ -17,7 +17,7 @@ namespace HCB.UI
             if (Managers.Instance == null)
                 return;
 
-           InputManager.Instance.OnTouch.AddListener(ToogleOnCount);
+            InputManager.Instance.OnTouch.AddListener(ToogleOnCount);
         }
 
         private void OnDisable()

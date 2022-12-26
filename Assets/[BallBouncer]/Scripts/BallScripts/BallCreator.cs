@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallCreator : MonoBehaviour
 {
@@ -10,16 +11,20 @@ public class BallCreator : MonoBehaviour
 
     private void OnEnable()
     {
-        throw new NotImplementedException();
+        
+        HCB.Core.EventManager.OnBallDie.AddListener(CreateBalls);
     }
 
     private void OnDisable()
     {
-        throw new NotImplementedException();
+        HCB.Core.EventManager.OnBallDie.RemoveListener(CreateBalls);
+        
     }
 
-    private void CreateBalls()
+    public void CreateBalls()
     {
+        
        GameObject ball = Instantiate(_ballPrefab, _ballSpawnPoint);
     }
+    
 }

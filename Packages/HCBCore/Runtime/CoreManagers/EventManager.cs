@@ -15,7 +15,9 @@ namespace HCB.Core
         public static StringEvet OnStatUpdated = new StringEvet();
         public static UnityEvent OnRemoteUpdated = new UnityEvent();
         public static AnalyticEvent OnLogEvent = new AnalyticEvent();
-
+        
+        
+        public static UnityEvent OnBallDie = new UnityEvent();
         #region Editor
         public static UnityEvent OnLevelDataChange = new UnityEvent();
         #endregion
