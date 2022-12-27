@@ -15,4 +15,10 @@ public class Ball : MonoBehaviour
     {
         
     }
+
+    public void Bounce()
+    {
+        Debug.Log("Bounce");
+        
+    }
 }

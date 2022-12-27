@@ -11,6 +11,7 @@ public class BallDetector : MonoBehaviour
         {
             HCB.Core.EventManager.OnBallDie.Invoke();
             Debug.Log("Ball died" + ball);
+            Destroy(ball.gameObject);
         }
     }
 }
