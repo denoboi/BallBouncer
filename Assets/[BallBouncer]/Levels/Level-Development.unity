@@ -4802,6 +4802,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961058673}
     m_Modifications:
+    - target: {fileID: 5101190334067342528, guid: 467f6f079b452324496a2e7d7ff7922b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101190334067342528, guid: 467f6f079b452324496a2e7d7ff7922b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5436115662337674241, guid: 467f6f079b452324496a2e7d7ff7922b, type: 3}
       propertyPath: m_Name
       value: Straight 1
@@ -4812,7 +4820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5436115662337674245, guid: 467f6f079b452324496a2e7d7ff7922b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.91
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 5436115662337674245, guid: 467f6f079b452324496a2e7d7ff7922b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6827,7 +6835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745083148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0, z: 1.22}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2037141446}
@@ -7312,6 +7320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 5354729093160939047, guid: b7f60e0be3d66c447a6ab1c1c845d800, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5432687575177761345, guid: 4fe54ac168629294aaad93a07f7390f9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f60e0be3d66c447a6ab1c1c845d800, type: 3}
 --- !u!1 &795478950
@@ -12815,7 +12827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371941572105783416, guid: e4639b5fb439e214da732bbe7e89f982, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3371941572105783420, guid: e4639b5fb439e214da732bbe7e89f982, type: 3}
       propertyPath: m_RootOrder

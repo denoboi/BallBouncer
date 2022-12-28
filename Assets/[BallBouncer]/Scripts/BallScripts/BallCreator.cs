@@ -24,7 +24,7 @@ public class BallCreator : MonoBehaviour
     public void CreateBalls()
     {
         
-       GameObject ball = Instantiate(_ballPrefab, _ballSpawnPoint);
+       GameObject ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity);
     }
     
 }
