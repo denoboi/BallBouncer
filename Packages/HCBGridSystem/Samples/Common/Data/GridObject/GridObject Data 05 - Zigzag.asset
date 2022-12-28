@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GridObject Data 05 - Zigzag
   m_EditorClassIdentifier: 
   Name: GridObject Zigzag
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 4800260085836388955, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
   ID: JGT82YCXFM

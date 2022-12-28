@@ -15,11 +15,16 @@ public class BounceCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.TryGetComponent<Ball>(out Ball ball))
+        if (collision.collider.TryGetComponent(out BounceVelocity bounceVelocity))
+        {
+            // bounceVelocity.BounceSpeed(collision.contacts[0].normal);
+            // Debug.Log("BounceSpeed" + bounceVelocity);
+        }
+        if (collision.collider.TryGetComponent(out Ball ball))
         {
             ball.Bounce();
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
-
+            
 
         }
         else

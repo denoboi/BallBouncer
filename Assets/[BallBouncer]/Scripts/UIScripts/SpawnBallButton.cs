@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpawnButton : MonoBehaviour
+public class SpawnBallButton : MonoBehaviour
 {
    public void OnClick()
    {
