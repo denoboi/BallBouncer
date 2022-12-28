@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  ActiveDefaultColor: {r: 0.33333334, g: 0.83921576, b: 0.12941177, a: 1}
-  ActiveOffsetColor: {r: 0.28627452, g: 0.62352943, b: 0.019607844, a: 1}
+  ActiveDefaultColor: {r: 0.4318346, g: 0.7830189, b: 0.2770114, a: 1}
+  ActiveOffsetColor: {r: 0.6254454, g: 0.8962264, b: 0.46079564, a: 1}
   DeactiveDefaultColor: {r: 0.5764706, g: 0.5764706, b: 0.5764706, a: 1}
   DeactiveOffsetColor: {r: 0.4431373, g: 0.4431373, b: 0.4431373, a: 1}
   InvisableDefaultColor: {r: 1, g: 1, b: 1, a: 0}
