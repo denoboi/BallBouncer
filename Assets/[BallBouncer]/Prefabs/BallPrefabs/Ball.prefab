@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 5432687575177761345, guid: 4fe54ac168629294aaad93a07f7390f9, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,7 +91,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5354729093160939045}
-  m_Material: {fileID: 13400000, guid: 432080eddf3bc2449a2c54573812900e, type: 2}
+  m_Material: {fileID: 13400000, guid: 9f8ccbe557a28cf4fa7c44e0c9f2749a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -105,9 +105,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5354729093160939045}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.04
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
