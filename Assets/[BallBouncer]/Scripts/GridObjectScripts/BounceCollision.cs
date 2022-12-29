@@ -2,6 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using HCB.Core;
+using HCB.PoolingSystem;
+using HCB.SplineMovementSystem;
+using TMPro;
 using UnityEngine;
 
 public class BounceCollision : MonoBehaviour
@@ -24,6 +28,8 @@ public class BounceCollision : MonoBehaviour
         {
             ball.Bounce();
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
+            HCB.Core.EventManager.OnPlayerDataChange.Invoke();
+            EarnMoney();
             
 
         }
@@ -71,4 +77,27 @@ public class BounceCollision : MonoBehaviour
         });
 
     }
+    
+    public void EarnMoney()
+    {
+        GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] += 1;
+        HCB.Core.EventManager.OnMoneyEarned?.Invoke();
+        
+        CreateFloatingText("+" + 1.ToString("N1") + " $", Color.green, 1f);
+    }
+    
+    public void CreateFloatingText(string s, Color color, float delay)
+    {
+        TextMeshPro text = PoolingSystem.Instance.InstantiateAPS("MoneyText",gameObject.transform.position).GetComponent<TextMeshPro>();
+        //text.transform.LookAt(Camera.main.transform);
+        text.SetText(s);
+        //text.DOFade(1, 1f);
+        text.color = color;
+        text.transform.DOMoveZ(text.transform.position.z + 2f, delay);
+        text.DOFade(0, delay / 2)
+            .SetDelay(delay / 2)
+            .OnComplete(() => PoolingSystem.Instance.DestroyAPS(text.gameObject));
+    }
+
+   
 }
