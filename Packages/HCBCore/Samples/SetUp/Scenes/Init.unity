@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SourceObjects:
   - ID: MoneyText
-    SourcePrefab: {fileID: 918302614858646112, guid: 7f8fee57959055a4a8dd84e46d48db1b, type: 3}
+    SourcePrefab: {fileID: 9059789997164524807, guid: 06acdd638d3981341a463c3bb39755c1, type: 3}
     MinNumberOfObject: 0
     AllowGrow: 1
     AutoDestroy: 1

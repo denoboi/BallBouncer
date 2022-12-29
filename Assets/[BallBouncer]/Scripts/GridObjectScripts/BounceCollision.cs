@@ -88,7 +88,7 @@ public class BounceCollision : MonoBehaviour
     
     public void CreateFloatingText(string s, Color color, float delay)
     {
-        TextMeshPro text = PoolingSystem.Instance.InstantiateAPS("MoneyText",gameObject.transform.position).GetComponent<TextMeshPro>();
+        TextMeshPro text = PoolingSystem.Instance.InstantiateAPS("MoneyText",gameObject.transform.position).GetComponentInChildren<TextMeshPro>();
         //text.transform.LookAt(Camera.main.transform);
         text.SetText(s);
         //text.DOFade(1, 1f);
