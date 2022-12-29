@@ -163,6 +163,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1e6abd80997674160a4fd10de15ac83d, type: 3}
+    - target: {fileID: 2194315033884014988, guid: a3ccf244b7b4b794c89ae1dbd72a4d63, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194315033884014988, guid: a3ccf244b7b4b794c89ae1dbd72a4d63, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194315033884014988, guid: a3ccf244b7b4b794c89ae1dbd72a4d63, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194315033884014988, guid: a3ccf244b7b4b794c89ae1dbd72a4d63, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 2194315034677350060, guid: a3ccf244b7b4b794c89ae1dbd72a4d63, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -626,6 +642,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2639808922361826895, guid: b8809dfc573cea6479373c11778446e4, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639808922361826895, guid: b8809dfc573cea6479373c11778446e4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ee41383b9d7c8f4599e6274b4e22921, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8809dfc573cea6479373c11778446e4, type: 3}
 --- !u!224 &815274899 stripped
@@ -820,6 +844,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2639808922361826895, guid: b8809dfc573cea6479373c11778446e4, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639808922361826895, guid: b8809dfc573cea6479373c11778446e4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abd8b06e22de19349af6cbd89a50163c, type: 3}
     - target: {fileID: 2639808924245282044, guid: b8809dfc573cea6479373c11778446e4, type: 3}
       propertyPath: m_text
       value: Merge Balls
@@ -1281,6 +1313,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2639808922361826895, guid: b8809dfc573cea6479373c11778446e4, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639808922361826895, guid: b8809dfc573cea6479373c11778446e4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 78b469875ddb5774fa3ddbb406fc8b5a, type: 3}
     - target: {fileID: 2639808924245282044, guid: b8809dfc573cea6479373c11778446e4, type: 3}
       propertyPath: m_text
       value: 'Create Shape
