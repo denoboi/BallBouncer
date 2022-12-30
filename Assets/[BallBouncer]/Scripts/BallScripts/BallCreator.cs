@@ -42,6 +42,8 @@ public class BallCreator : MonoBehaviour
         GameObject ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity);
         ball.GetComponent<Ball>().Level = 2;
     }
+    
+    
    
     
 
