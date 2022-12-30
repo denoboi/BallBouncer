@@ -7,6 +7,6 @@ public class SpawnBallButton : MonoBehaviour
 {
    public void OnClick()
    {
-        GameObject.Find("BallCreator").GetComponent<BallCreator>().CreateBalls();
+        GameObject.Find("BallCreator").GetComponent<BallCreator>().CreateBallsViaButton();
    }
 }

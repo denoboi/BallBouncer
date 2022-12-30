@@ -21,6 +21,11 @@ namespace HCB.Core
         public static UnityEvent OnMoneyEarned = new UnityEvent();
         #region Editor
         public static UnityEvent OnLevelDataChange = new UnityEvent();
+        
+        public static BoolEvent OnMergeCheck = new BoolEvent();
+        
+        public static IntEvent OnCreateBallLevelUp = new IntEvent();
+        
         #endregion
     }
 
@@ -28,5 +33,8 @@ namespace HCB.Core
     public class CurrencyEvent : UnityEvent<ExchangeType, double> { }
     public class StringEvet : UnityEvent<string> { }
     public class AnalyticEvent : UnityEvent<string, string, string> { }
+    
+    public class IntEvent : UnityEvent<int> { }
+    public class BoolEvent : UnityEvent<bool> { }
 
 }

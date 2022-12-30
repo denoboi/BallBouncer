@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using HCB.IncrimantalIdleSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CreateShapeButton : MonoBehaviour
+public class CreateShapeButton : IdleStatObjectBase
 {
-    public void OnClick()
+
+    public override void UpdateStat(string id)
     {
-        GameObject.Find("ShapeCreator").GetComponent<ShapeCreator>().CreateShape();
+        if(id.Equals("CreateShape"))
+            GameObject.Find("ShapeCreator").GetComponent<ShapeCreator>().CreateShape();
     }
 }

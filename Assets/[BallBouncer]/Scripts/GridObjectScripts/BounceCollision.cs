@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using HCB.Core;
+using HCB.IncrimantalIdleSystem.Examples;
 using HCB.PoolingSystem;
 using HCB.SplineMovementSystem;
 using TMPro;
@@ -16,21 +17,34 @@ public class BounceCollision : MonoBehaviour
     private const float BLEND_SHAPE_DURATION = .1f;
     private const float BLEND_SHAPE_BACK_EASE = .3f;
 
+    private string _scaleTweenID;
+    
+    public float shakeAmount = 0.1f;
+    public float shakeDuration = 0.5f;
+ 
+
+    public void ScaleTween(Vector3 from, Vector3 to, float duration, float delay = 0, Action onComplete = null)
+    {
+        DOTween.Kill(_scaleTweenID);
+        transform.localScale = from;
+        transform.DOScale(to, duration).SetEase(Ease.Linear).SetId(_scaleTweenID).SetDelay(delay).OnComplete(() => onComplete?.Invoke());
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.TryGetComponent(out BounceVelocity bounceVelocity))
-        {
-            // bounceVelocity.BounceSpeed(collision.contacts[0].normal);
-            // Debug.Log("BounceSpeed" + bounceVelocity);
-        }
         if (collision.collider.TryGetComponent(out Ball ball))
         {
             ball.Bounce();
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
-            HCB.Core.EventManager.OnPlayerDataChange.Invoke();
             EarnMoney();
-            
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 20, ForceMode.Impulse);
+            //ball.transform.DOScale(new Vector3(.5f, .5f, .5f), .5f).SetEase(Ease.OutBounce);
+          
+
+           
+              //ball.transform.DOShakeScale(shakeDuration,shakeAmount,10,90,true);
+              ball.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
 
         }
         else
@@ -42,6 +56,7 @@ public class BounceCollision : MonoBehaviour
     private void Start()
     {
         _meshRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
+        _scaleTweenID = GetInstanceID() + "scaleUp";
     }
 
 
@@ -81,7 +96,15 @@ public class BounceCollision : MonoBehaviour
     public void EarnMoney()
     {
         GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] += 1;
+       
+        IdleUpgradeButton[] idleUpgradeButtons = FindObjectsOfType<IdleUpgradeButton>();
+        foreach (var idleUpgradeButton in idleUpgradeButtons)
+        {
+            idleUpgradeButton.CheckBuyablity(null);
+            
+        }
         HCB.Core.EventManager.OnMoneyEarned?.Invoke();
+        HCB.Core.EventManager.OnPlayerDataChange?.Invoke();
         
         CreateFloatingText("+" + 1.ToString("N1") + " $", Color.green, 1f);
     }
