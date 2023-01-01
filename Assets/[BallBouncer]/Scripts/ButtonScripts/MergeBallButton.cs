@@ -7,9 +7,9 @@ public class MergeBallButton : IdleStatObjectBase
 {
     public override void UpdateStat(string id)
     {
-        if (id == "MergeBall")
+        if (id == "MergeBalls")
         {
-            BallManager.Instance.Merge();
+           BallManager.Instance.MergeBalls();
         }
     }
 

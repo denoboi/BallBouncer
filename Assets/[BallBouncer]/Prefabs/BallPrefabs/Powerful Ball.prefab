@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 785390617}
   - component: {fileID: 785390618}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: Powerful Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d93d77b60c9cb4747abd83565b88277b, type: 2}
+  - {fileID: 2726956563197389002, guid: 4949b13818ccb60408543279d7a3eeba, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482919ec39b918b4ea732193268a93b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0

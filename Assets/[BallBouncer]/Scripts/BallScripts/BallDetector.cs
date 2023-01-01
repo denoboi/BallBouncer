@@ -10,6 +10,7 @@ public class BallDetector : MonoBehaviour
         if(other.TryGetComponent<Ball>(out Ball ball))
         {
             HCB.Core.EventManager.OnBallDie.Invoke();
+            BallManager.Instance.NumWeakBalls--;
             Debug.Log("Ball died" + ball);
             Destroy(ball.gameObject);
         }

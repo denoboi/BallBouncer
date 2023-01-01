@@ -8,12 +8,12 @@ public class Ball : MonoBehaviour
     public int Level;
     private void OnEnable()
     {
-        BallManager.Instance.AddBall(this);
+        // BallManager.Instance.AddBall(this);
     }
 
     private void OnDisable()
     {
-        BallManager.Instance.RemoveBall(this);
+        // BallManager.Instance.RemoveBall(this);
     }
 
     public void Bounce()
