@@ -35,9 +35,9 @@ public class BounceCollision : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Ball ball))
         {
-            ball.Bounce();
+            
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
-            EarnMoney();
+            EarnMoney(1);
             ball.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
             //ball.transform.DOScale(new Vector3(.5f, .5f, .5f), .5f).SetEase(Ease.OutBounce);
             
@@ -90,9 +90,9 @@ public class BounceCollision : MonoBehaviour
 
     }
     
-    public void EarnMoney()
+    public void EarnMoney(float value)
     {
-        GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] += 1;
+        GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] += value;
        
         IdleUpgradeButton[] idleUpgradeButtons = FindObjectsOfType<IdleUpgradeButton>();
         foreach (var idleUpgradeButton in idleUpgradeButtons)
@@ -103,12 +103,12 @@ public class BounceCollision : MonoBehaviour
         HCB.Core.EventManager.OnMoneyEarned?.Invoke();
         HCB.Core.EventManager.OnPlayerDataChange?.Invoke();
         
-        CreateFloatingText("+" + 1.ToString("N1") + " $", Color.green, 1f);
+        CreateFloatingText("+" + 1.ToString("N1") + " $", Color.green, .7f);
     }
     
     public void CreateFloatingText(string s, Color color, float delay)
     {
-        TextMeshPro text = PoolingSystem.Instance.InstantiateAPS("MoneyText",gameObject.transform.position).GetComponentInChildren<TextMeshPro>();
+        TextMeshPro text = PoolingSystem.Instance.InstantiateAPS("MoneyText",gameObject.transform.position + Vector3.up).GetComponentInChildren<TextMeshPro>();
         //text.transform.LookAt(Camera.main.transform);
         text.SetText(s);
         //text.DOFade(1, 1f);

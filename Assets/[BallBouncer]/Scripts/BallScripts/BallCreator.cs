@@ -33,10 +33,11 @@ public class BallCreator : MonoBehaviour
     public bool CreateBallsViaButton()
     {
         
-          Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
+         Ball ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
+             ball.Initialize();
           BallManager.Instance.NumWeakBalls++;
           return true;
-          //ball.Initialize(_ballDirection);
+          
 
     }
 
