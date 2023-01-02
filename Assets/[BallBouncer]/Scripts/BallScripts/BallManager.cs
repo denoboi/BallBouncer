@@ -34,18 +34,25 @@ public class BallManager : Singleton<BallManager>
 
     }
 
+    private void Update()
+    {
+        CheckWeakMerge(); //bug cikarabilir.
+    }
+
     public void MergeBalls()
     {
+        
         if (NumWeakBalls >= 3 && CreateLevelTwoBallsButton())
         {
+            
             GameObject[] weakBalls = GameObject.FindGameObjectsWithTag("WeakBall");
 
-            foreach (var ball in weakBalls)
+            for (int i = 1; i <= 3; i++)
             {
-                Destroy(ball);
+                Destroy(weakBalls[i]);
             }
 
-            NumWeakBalls = 0;
+            //NumWeakBalls = 0;
            // CreateLevelTwoBallsButton();
         }
     }
@@ -55,6 +62,15 @@ public class BallManager : Singleton<BallManager>
         Instantiate(MediumBall, _mediumBallSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
         BallManager.Instance.NumMediumBalls++;
         return true;
+    }
+
+    private void CheckWeakMerge()
+    {
+        if(NumWeakBalls>= 3)
+        {
+            HCB.Core.EventManager.OnMergeCheck.Invoke(true);
+        }
+        
     }
     
     
