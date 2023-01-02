@@ -813,7 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354729093160939041, guid: b7f60e0be3d66c447a6ab1c1c845d800, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.46
+      value: -4.01
       objectReference: {fileID: 0}
     - target: {fileID: 5354729093160939041, guid: b7f60e0be3d66c447a6ab1c1c845d800, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21610,7 +21610,7 @@ GameObject:
   - component: {fileID: 2020990552}
   - component: {fileID: 2020990554}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: BallDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21720,6 +21720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb77b77059c404e49ae395274af7dfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerfulBallPrefab: {fileID: 5354729093160939045, guid: dfb724185b22de045bc939ebb44e653f, type: 3}
+  mediumBallPrefab: {fileID: 5354729093160939045, guid: fc04f2d7d384e1e4c92834c279808b78, type: 3}
+  weakBallPrefab: {fileID: 5354729093160939045, guid: b7f60e0be3d66c447a6ab1c1c845d800, type: 3}
 --- !u!65 &2020990552
 BoxCollider:
   m_ObjectHideFlags: 0

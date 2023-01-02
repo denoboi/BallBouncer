@@ -21,8 +21,8 @@ public class BounceCollision : MonoBehaviour
     
     public float shakeAmount = 0.1f;
     public float shakeDuration = 0.5f;
- 
 
+    [SerializeField] private float _forceAmount = 30f;
     public void ScaleTween(Vector3 from, Vector3 to, float duration, float delay = 0, Action onComplete = null)
     {
         DOTween.Kill(_scaleTweenID);
@@ -38,14 +38,11 @@ public class BounceCollision : MonoBehaviour
             ball.Bounce();
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
             EarnMoney();
-            ball.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 20, ForceMode.Impulse);
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
             //ball.transform.DOScale(new Vector3(.5f, .5f, .5f), .5f).SetEase(Ease.OutBounce);
-          
-
-           
+            
               //ball.transform.DOShakeScale(shakeDuration,shakeAmount,10,90,true);
               ball.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
-
         }
         else
         {

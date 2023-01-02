@@ -11,8 +11,8 @@ namespace HCB.IncrimantalIdleSystem.Examples
 {
     public class IdleUpgradeButton : IdleStatUpgraderBase
     {
+
         private bool _canMerge;
-        
         
         private Button button;
         protected Button Button { get { return (button == null) ? button = GetComponent<Button>() : button; } }
@@ -30,7 +30,7 @@ namespace HCB.IncrimantalIdleSystem.Examples
             if (Managers.Instance == null)
                 return;
             
-          //  EventManager.OnMergeCheck.AddListener(MergeCheck);
+            EventManager.OnMergeCheck.AddListener(MergeCheck);
 
             SceneController.Instance.OnSceneLoaded.AddListener(InitializeButton);
             Button.onClick.AddListener(UpgradeStat);
@@ -42,7 +42,7 @@ namespace HCB.IncrimantalIdleSystem.Examples
             if (Managers.Instance == null)
                 return;
             
-            //EventManager.OnMergeCheck.RemoveListener(MergeCheck);
+            EventManager.OnMergeCheck.RemoveListener(MergeCheck);
             SceneController.Instance.OnSceneLoaded.RemoveListener(InitializeButton);
             Button.onClick.RemoveListener(UpgradeStat);
             EventManager.OnStatUpdated.RemoveListener(CheckBuyablity);
@@ -54,14 +54,14 @@ namespace HCB.IncrimantalIdleSystem.Examples
         }
         public void CheckBuyablity(string id)
         {
-            // if (IdleStat.StatID == "MergeBalls")
-            // {
-            //     if(_canMerge && GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] >= IdleStat.CurrentCost)
-            //         Button.interactable = true;
-            //     else
-            //         Button.interactable = false;
-            // }
-            // else
+            if (IdleStat.StatID == "MergeBalls")
+            {
+                if(_canMerge && GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] >= IdleStat.CurrentCost)
+                    Button.interactable = true;
+                else
+                    Button.interactable = false;
+            }
+            else
                 Button.interactable = GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] >= IdleStat.CurrentCost;
         }
 
@@ -85,7 +85,7 @@ namespace HCB.IncrimantalIdleSystem.Examples
                 return;
             }
 
-
+            
             GameManager.Instance.PlayerData.CurrencyData[ExchangeType.Coin] -= (int)IdleStat.CurrentCost;
            EventManager.OnCurrencyInteracted.Invoke(IdleStat.ExchangeType, GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType]);
             base.UpgradeStat();

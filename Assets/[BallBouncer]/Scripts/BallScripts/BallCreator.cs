@@ -17,6 +17,7 @@ public class BallCreator : MonoBehaviour
     private void OnEnable()
     {
         HCB.Core.EventManager.OnBallDie.AddListener(() => CreateBallsViaButton());
+      
         _ballDirection = new Vector3(Random.Range(-1, 1), 0, Random.Range(0, 0));
         
         HCB.Core.EventManager.OnCreateBallLevelUp.AddListener(CreateBall);

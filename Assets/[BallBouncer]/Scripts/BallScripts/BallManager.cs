@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using HCB.Utilities;
@@ -22,9 +23,20 @@ public class BallManager : Singleton<BallManager>
     public List<Ball> _weakBalls = new List<Ball>();
 
 
+    private void OnEnable()
+    {
+        HCB.Core.EventManager.OnMediumBallDie.AddListener(()=>CreateLevelTwoBallsButton());
+    }
+
+    private void OnDisable()
+    {
+        HCB.Core.EventManager.OnMediumBallDie.RemoveListener(()=>CreateLevelTwoBallsButton());
+
+    }
+
     public void MergeBalls()
     {
-        if (NumWeakBalls == 3 && CreateLevelTwoBallsButton())
+        if (NumWeakBalls >= 3 && CreateLevelTwoBallsButton())
         {
             GameObject[] weakBalls = GameObject.FindGameObjectsWithTag("WeakBall");
 
@@ -34,7 +46,7 @@ public class BallManager : Singleton<BallManager>
             }
 
             NumWeakBalls = 0;
-            CreateLevelTwoBallsButton();
+           // CreateLevelTwoBallsButton();
         }
     }
     
