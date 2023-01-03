@@ -20,6 +20,10 @@ namespace HCB.Core
         public static UnityEvent OnBallDie = new UnityEvent();
         public static UnityEvent OnMediumBallDie = new UnityEvent();
         public static UnityEvent OnMoneyEarned = new UnityEvent();
+  
+        
+
+        
         #region Editor
         public static UnityEvent OnLevelDataChange = new UnityEvent();
         
@@ -27,9 +31,11 @@ namespace HCB.Core
         
         public static IntEvent OnCreateBallLevelUp = new IntEvent();
         
+        
         #endregion
     }
 
+   
     public class PlayerDataEvent : UnityEvent<PlayerData> { }
     public class CurrencyEvent : UnityEvent<ExchangeType, double> { }
     public class StringEvet : UnityEvent<string> { }

@@ -65,5 +65,12 @@ namespace HCB.GridSystem
             IsActive = true;
             CanSelectable = true;
         }
+
+        public override bool Select()
+        {
+            
+            return base.Select();
+            
+        }
     }
 }

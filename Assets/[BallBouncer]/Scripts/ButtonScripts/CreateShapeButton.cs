@@ -4,12 +4,23 @@ using HCB.IncrimantalIdleSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CreateShapeButton : IdleStatObjectBase
+public class CreateShapeButton : MonoBehaviour
 {
-
-    public override void UpdateStat(string id)
+    
+    public StairTypes SelectStairTypes;
+   
+   
+    public enum StairTypes
     {
-        if(id.Equals("CreateShape"))
-            GameObject.Find("ShapeCreator").GetComponent<ShapeCreator>().CreateShape();
+        Flat = 0,
+        L = 1,
+        Z = 2
     }
+    
+    public void CreateStair()
+    {
+        EventManager.OnShapeCreated.Invoke(SelectStairTypes);
+        EventManager.CloseShapePanel.Invoke();
+    }
+   
 }

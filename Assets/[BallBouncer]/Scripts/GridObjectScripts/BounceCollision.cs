@@ -43,6 +43,9 @@ public class BounceCollision : MonoBehaviour
             
               //ball.transform.DOShakeScale(shakeDuration,shakeAmount,10,90,true);
               ball.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
+
+              if (collision.collider.CompareTag("MediumBall"))
+                  EarnMoney(4);
         }
         else
         {
