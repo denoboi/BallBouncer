@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,25 @@ namespace HCB.GridSystem
         public GridObjectData GridObjectData => _gridObjectData;
         private Collider[] _collider;
         public Collider[] Collider => _collider ??= _collider = GetComponentsInChildren<Collider>();
+
+        private Renderer[] _renderer;
+        public Renderer[] Renderer => _renderer ??= _renderer = GetComponentsInChildren<Renderer>();
+
+        private Color _defaultColor;
+        
         protected override void Awake()
         {
             base.Awake();
             Activate();
+           
+        }
+
+        private void Start()
+        {
+            for (int i = 0; i < Renderer.Length; i++)
+            {
+                _defaultColor = Renderer[i].material.color;
+            }
         }
 
         protected override void OnEnable()
@@ -70,10 +86,14 @@ namespace HCB.GridSystem
         public override bool Select()
         {
             int gridLayer = LayerMask.NameToLayer("NonTouchable");
-            
             for (int i = 0; i < Collider.Length; i++)
             {
                 Collider[i].gameObject.layer = gridLayer;
+            }
+
+            for (int i = 0; i < Renderer.Length; i++)
+            {
+                Renderer[i].material.color = Color.gray;
             }
           
             return base.Select();
@@ -88,6 +108,12 @@ namespace HCB.GridSystem
             {
                 Collider[i].gameObject.layer = defaultLayer;
             }
+            
+            for (int i = 0; i < Renderer.Length; i++)
+            {
+                Renderer[i].material.color = _defaultColor;
+            }
+            
             return base.Deselect();
         }
     }

@@ -127,6 +127,8 @@ public class BounceCollision : MonoBehaviour
             .SetDelay(delay / 2)
             .OnComplete(() => PoolingSystem.Instance.DestroyAPS(text.gameObject));
     }
+    
+    
 
    
 }

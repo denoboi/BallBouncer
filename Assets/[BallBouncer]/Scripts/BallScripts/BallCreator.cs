@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using HCB.IncrimantalIdleSystem;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class BallCreator : MonoBehaviour
     [SerializeField] private GameObject _ballPrefab;
     [SerializeField] private Transform _ballSpawnPoint;
     public Vector3 _ballDirection;
+    
+   
     
   
 
@@ -33,7 +36,9 @@ public class BallCreator : MonoBehaviour
     public bool CreateBallsViaButton()
     {
         
+        
          Ball ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
+         ball.ScaleTween(Vector3.zero, Vector3.one, 1f); //bug cikarabilir.
              ball.Initialize();
           BallManager.Instance.NumWeakBalls++;
           return true;
@@ -48,6 +53,8 @@ public class BallCreator : MonoBehaviour
         GameObject ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity);
         ball.GetComponent<Ball>().Level = 2;
     }
+    
+   
     
     
    
