@@ -14,7 +14,8 @@ public class CreateShapeButton : MonoBehaviour
     {
         Flat = 0,
         L = 1,
-        Z = 2
+        Z = 2,
+        Block = 3
     }
     
     public void CreateStair()

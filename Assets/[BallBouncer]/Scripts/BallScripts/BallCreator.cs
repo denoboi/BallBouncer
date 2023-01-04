@@ -11,6 +11,7 @@ public class BallCreator : MonoBehaviour
 {
     [SerializeField] private GameObject _ballPrefab;
     [SerializeField] private Transform _ballSpawnPoint;
+    [SerializeField] private Transform _ballSpawnPoint2;
     public Vector3 _ballDirection;
     
    
@@ -38,7 +39,8 @@ public class BallCreator : MonoBehaviour
         
         
          Ball ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
-         ball.ScaleTween(Vector3.zero, Vector3.one, 1f); //bug cikarabilir.
+         ball.ScaleTween(Vector3.zero, Vector3.one, .3f); //bug cikarabilir.
+         //ball.MoveTween(_ballSpawnPoint2.position, _ballSpawnPoint.position,.5f);
              ball.Initialize();
           BallManager.Instance.NumWeakBalls++;
           return true;

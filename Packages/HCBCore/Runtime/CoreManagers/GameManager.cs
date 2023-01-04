@@ -123,6 +123,8 @@ namespace HCB.Core
         private void OnApplicationQuit()
         {
             SaveLoadManager.SavePDP(playerData, SavedFileNameHolder.PlayerData);
+            
+            
         }        
     }
 }

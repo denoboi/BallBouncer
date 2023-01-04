@@ -23,35 +23,30 @@ public class BounceCollision : MonoBehaviour
     public float shakeDuration = 0.5f;
 
     [SerializeField] private float _forceAmount = 30f;
-    public void ScaleTween(Vector3 from, Vector3 to, float duration, float delay = 0, Action onComplete = null)
-    {
-        DOTween.Kill(_scaleTweenID);
-        transform.localScale = from;
-        transform.DOScale(to, duration).SetEase(Ease.Linear).SetId(_scaleTweenID).SetDelay(delay).OnComplete(() => onComplete?.Invoke());
-    }
-
+   
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.TryGetComponent(out Ball ball))
+        if (collision.collider.CompareTag("WeakBall"))
         {
             
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
             EarnMoney(1);
             
-            ball.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
             //ball.transform.DOScale(new Vector3(.5f, .5f, .5f), .5f).SetEase(Ease.OutBounce);
             
               //ball.transform.DOShakeScale(shakeDuration,shakeAmount,10,90,true);
-              ball.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
+              collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
 
-              if (collision.collider.CompareTag("MediumBall"))
-              {
-                  
-                  EarnMoney(4);
-                  
-              }
-                 
+        }
+        
+        if (collision.collider.CompareTag("MediumBall"))
+        {
+            ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
+            collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
+            EarnMoney(4);
         }
         else
         {
@@ -112,7 +107,7 @@ public class BounceCollision : MonoBehaviour
         HCB.Core.EventManager.OnMoneyEarned.Invoke();
         HCB.Core.EventManager.OnPlayerDataChange.Invoke();
         
-        CreateFloatingText("+" + 1.ToString("N1") + " $", Color.green, .7f);
+        CreateFloatingText("+" + value.ToString("N1") + " $", Color.green, .7f);
     }
     
     public void CreateFloatingText(string s, Color color, float delay)

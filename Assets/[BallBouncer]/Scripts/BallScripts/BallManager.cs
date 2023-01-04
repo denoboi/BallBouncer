@@ -17,20 +17,21 @@ public class BallManager : Singleton<BallManager>
 
     public int NumWeakBalls = 1;
     public int NumMediumBalls = 0;
-
+    
+    public bool IsMediumBallButtonPressed = false;
     public BallCreator BallCreator => _ballCreator == null ? _ballCreator = GetComponent<BallCreator>() : _ballCreator;
     
     public List<Ball> _weakBalls = new List<Ball>();
-
+    [SerializeField] private ParticleSystem _mediumBallParticleSystem;
 
     private void OnEnable()
     {
-        HCB.Core.EventManager.OnMediumBallDie.AddListener(()=>CreateLevelTwoBallsButton());
+        HCB.Core.EventManager.OnMediumBallDie.AddListener(()=>CreateLevelTwoBalls());
     }
 
     private void OnDisable()
     {
-        HCB.Core.EventManager.OnMediumBallDie.RemoveListener(()=>CreateLevelTwoBallsButton());
+        HCB.Core.EventManager.OnMediumBallDie.RemoveListener(()=>CreateLevelTwoBalls());
 
     }
 
@@ -41,25 +42,28 @@ public class BallManager : Singleton<BallManager>
 
     public void MergeBalls()
     {
-        
-        if (NumWeakBalls >= 3 && CreateLevelTwoBallsButton())
+        if (NumWeakBalls >= 3)
         {
-            
+            CreateLevelTwoBalls();
             GameObject[] weakBalls = GameObject.FindGameObjectsWithTag("WeakBall");
 
-            for (int i = 1; i <= 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Destroy(weakBalls[i]);
             }
-
-            //NumWeakBalls = 0;
+            _mediumBallParticleSystem.Play();
+            NumWeakBalls -= 3;
            // CreateLevelTwoBallsButton();
+           
+           IsMediumBallButtonPressed = false;
         }
     }
     
-    private bool CreateLevelTwoBallsButton()
+    private bool CreateLevelTwoBalls()
     {
-        Instantiate(MediumBall, _mediumBallSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
+        Ball ball = Instantiate(MediumBall, _mediumBallSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
+        ball.InitializeMediumBall();
+        ball.ScaleTween(Vector3.zero, Vector3.one, 0.5f); //bug makinesi
         BallManager.Instance.NumMediumBalls++;
         return true;
     }
@@ -69,6 +73,11 @@ public class BallManager : Singleton<BallManager>
         if(NumWeakBalls>= 3)
         {
             HCB.Core.EventManager.OnMergeCheck.Invoke(true);
+        }
+        
+        else if(NumWeakBalls < 3)
+        {
+            HCB.Core.EventManager.OnMergeCheck.Invoke(false);
         }
         
     }

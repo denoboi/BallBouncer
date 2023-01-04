@@ -12,56 +12,44 @@ namespace HCB.IncrimantalIdleSystem.Examples
     public class IdleUpgradeButton : IdleStatUpgraderBase
     {
 
-        private bool _canMerge;
+        
         
         private Button button;
         protected Button Button { get { return (button == null) ? button = GetComponent<Button>() : button; } }
 
         [Header("Components")]
-        [SerializeField]
-        private TextMeshProUGUI StatIDText;
+        // [SerializeField]
+        // private TextMeshProUGUI StatIDText;
         [SerializeField]
         private TextMeshProUGUI StatLevelText;
         [SerializeField]
         private TextMeshProUGUI StatCostText;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             if (Managers.Instance == null)
                 return;
             
-            EventManager.OnMergeCheck.AddListener(MergeCheck);
-
+            
             SceneController.Instance.OnSceneLoaded.AddListener(InitializeButton);
             Button.onClick.AddListener(UpgradeStat);
             EventManager.OnStatUpdated.AddListener(CheckBuyablity);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (Managers.Instance == null)
                 return;
             
-            EventManager.OnMergeCheck.RemoveListener(MergeCheck);
             SceneController.Instance.OnSceneLoaded.RemoveListener(InitializeButton);
             Button.onClick.RemoveListener(UpgradeStat);
             EventManager.OnStatUpdated.RemoveListener(CheckBuyablity);
         }
 
-        private void MergeCheck(bool value)
+       
+        public virtual void CheckBuyablity(string id)
         {
-            _canMerge = value;
-        }
-        public void CheckBuyablity(string id)
-        {
-            if (IdleStat.StatID == "MergeBalls")
-            {
-                if(_canMerge && GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] >= IdleStat.CurrentCost)
-                    Button.interactable = true;
-                else
-                    Button.interactable = false;
-            }
-            else
+            
                 Button.interactable = GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] >= IdleStat.CurrentCost;
         }
 
