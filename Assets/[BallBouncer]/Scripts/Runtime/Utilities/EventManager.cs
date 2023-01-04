@@ -9,6 +9,7 @@ public static class EventManager
     
     public static ShapeCreateEvent OnShapeCreated = new ShapeCreateEvent();
     public static UnityEvent CloseShapePanel = new UnityEvent();
+  
     
 }
 

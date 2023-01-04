@@ -11,7 +11,8 @@ namespace HCB.GridSystem
         [Header("Grid Object")]
         [SerializeField] private GridObjectData _gridObjectData;
         public GridObjectData GridObjectData => _gridObjectData;
-
+        private Collider[] _collider;
+        public Collider[] Collider => _collider ??= _collider = GetComponentsInChildren<Collider>();
         protected override void Awake()
         {
             base.Awake();
@@ -68,9 +69,26 @@ namespace HCB.GridSystem
 
         public override bool Select()
         {
+            int gridLayer = LayerMask.NameToLayer("NonTouchable");
             
+            for (int i = 0; i < Collider.Length; i++)
+            {
+                Collider[i].gameObject.layer = gridLayer;
+            }
+          
             return base.Select();
             
+        }
+        
+        public override bool Deselect()
+        {
+            int defaultLayer = LayerMask.NameToLayer("Default");
+            
+            for (int i = 0; i < Collider.Length; i++)
+            {
+                Collider[i].gameObject.layer = defaultLayer;
+            }
+            return base.Deselect();
         }
     }
 }

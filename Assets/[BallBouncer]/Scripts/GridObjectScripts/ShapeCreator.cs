@@ -20,18 +20,21 @@ public class ShapeCreator : MonoBehaviour
     private void OnEnable()
     { 
         EventManager.OnShapeCreated.AddListener(CreateShape);
+        EventManager.CloseShapePanel.AddListener(CloseCreateShapePanel);
     }
 
     private void OnDisable()
     {
         EventManager.OnShapeCreated.RemoveListener(CreateShape);
+        EventManager.CloseShapePanel.RemoveListener(CloseCreateShapePanel);
+
 
     }
 
     public void CreateShape(CreateShapeButton.StairTypes types) 
-    { 
-        //int randomShape = Random.Range(0, Shapes.Length);
+    {
         Instantiate(Shapes[(int)types], transform.position, Quaternion.identity);
+        
     }
     
     void RandomButtonSet()
@@ -57,9 +60,8 @@ public class ShapeCreator : MonoBehaviour
         _createShapePanel.transform.DOMoveY(20, .5f);
     }
     
-    public void CloseCreateStairPanel()
+    public void CloseCreateShapePanel()
     {
-
         _createShapePanel.transform.DOMoveY(-500, .2f);
     }
 }

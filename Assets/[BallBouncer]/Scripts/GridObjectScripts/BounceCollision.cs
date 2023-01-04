@@ -38,6 +38,7 @@ public class BounceCollision : MonoBehaviour
             
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
             EarnMoney(1);
+            
             ball.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
             //ball.transform.DOScale(new Vector3(.5f, .5f, .5f), .5f).SetEase(Ease.OutBounce);
             
@@ -45,7 +46,12 @@ public class BounceCollision : MonoBehaviour
               ball.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
 
               if (collision.collider.CompareTag("MediumBall"))
+              {
+                  
                   EarnMoney(4);
+                  
+              }
+                 
         }
         else
         {
@@ -103,8 +109,8 @@ public class BounceCollision : MonoBehaviour
             idleUpgradeButton.CheckBuyablity(null);
             
         }
-        HCB.Core.EventManager.OnMoneyEarned?.Invoke();
-        HCB.Core.EventManager.OnPlayerDataChange?.Invoke();
+        HCB.Core.EventManager.OnMoneyEarned.Invoke();
+        HCB.Core.EventManager.OnPlayerDataChange.Invoke();
         
         CreateFloatingText("+" + 1.ToString("N1") + " $", Color.green, .7f);
     }

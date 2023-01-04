@@ -395,6 +395,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133c1df037fda844dabc5d2d67122473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &135063683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2194315033527254115, guid: a3ccf244b7b4b794c89ae1dbd72a4d63, type: 3}
+  m_PrefabInstance: {fileID: 135063679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &135063684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135063683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3267b4ac6fa496f4f82d51424bb02ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &136523418 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7075970567159850050, guid: 8408f222b483c456bb794eb26dd0cfd0, type: 3}
@@ -669,13 +686,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 843970705}
     m_Modifications:
+    - target: {fileID: 4933556380533778885, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e86e1960cffbcd849aaf8c0833bee107, type: 2}
+    - target: {fileID: 4933556380533778885, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6828918613424704080, guid: e86e1960cffbcd849aaf8c0833bee107, type: 2}
     - target: {fileID: 4933556380533778938, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4933556380533778938, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000066757
+      value: -0.000005722
       objectReference: {fileID: 0}
     - target: {fileID: 4933556380829357408, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
       propertyPath: m_Name
@@ -1099,11 +1124,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1601406883749638946, guid: 33b34459bd0132c4ca09c067b1847a73, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 123.7663
       objectReference: {fileID: 0}
     - target: {fileID: 1601406883749638946, guid: 33b34459bd0132c4ca09c067b1847a73, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 123.77
       objectReference: {fileID: 0}
     - target: {fileID: 1601406883749638946, guid: 33b34459bd0132c4ca09c067b1847a73, type: 3}
       propertyPath: m_LocalPosition.x
