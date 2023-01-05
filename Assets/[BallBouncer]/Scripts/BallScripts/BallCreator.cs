@@ -38,8 +38,9 @@ public class BallCreator : MonoBehaviour
     {
         
         
-         Ball ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity).GetComponent<Ball>();
+         Ball ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Random.rotation).GetComponent<Ball>();
          ball.ScaleTween(Vector3.zero, Vector3.one, .3f); //bug cikarabilir.
+         //ball.transform.DORotate(Vector3.up, 0.5f, RotateMode.FastBeyond360);
          //ball.MoveTween(_ballSpawnPoint2.position, _ballSpawnPoint.position,.5f);
              ball.Initialize();
           BallManager.Instance.NumWeakBalls++;
