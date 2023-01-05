@@ -1363,9 +1363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleStat: {fileID: 11400000, guid: 52865615aa98adf4892bbe2bdb656d1c, type: 2}
-  _canMerge: 0
   StatLevelText: {fileID: 986455094}
   StatCostText: {fileID: 986455093}
+  _canMerge: 0
 --- !u!114 &986455093 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4933556381041655817, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
