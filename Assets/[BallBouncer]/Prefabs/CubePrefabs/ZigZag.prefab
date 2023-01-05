@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137202, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _padding
-      value: 0.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137203, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: m_RootOrder

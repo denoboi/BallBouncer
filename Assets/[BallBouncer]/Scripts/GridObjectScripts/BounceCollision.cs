@@ -38,6 +38,8 @@ public class BounceCollision : MonoBehaviour
             
               //ball.transform.DOShakeScale(shakeDuration,shakeAmount,10,90,true);
               collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
+              
+              HapticManager.Haptic(HapticTypes.LightImpact);
 
         }
         
@@ -46,6 +48,7 @@ public class BounceCollision : MonoBehaviour
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
             collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
             collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
+            HapticManager.Haptic(HapticTypes.LightImpact);
             EarnMoney(4);
         }
         else

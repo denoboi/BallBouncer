@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7469949568253751079, guid: 1af4677e2b88c5f419937fafc1ed5c56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7469949568253751079, guid: 1af4677e2b88c5f419937fafc1ed5c56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -66,11 +66,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1409892383170013644, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.481
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383170013644, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409892383170013644, guid: fdcdd9118a569414788204328bdc2150, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.471
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137201, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _gridPoints.Array.size
@@ -82,15 +86,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137201, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _gridPoints.Array.data[0].y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137201, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _gridPoints.Array.data[1].x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137201, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _gridPoints.Array.data[1].y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137201, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _gridPoints.Array.data[2].x
@@ -102,15 +106,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137201, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _gridPoints.Array.data[3].x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137201, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _gridPoints.Array.data[3].y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137202, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: _padding
-      value: -0.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1409892383325137203, guid: fdcdd9118a569414788204328bdc2150, type: 3}
       propertyPath: m_RootOrder
