@@ -9,8 +9,9 @@ public static class EventManager
     
     public static ShapeCreateEvent OnShapeCreated = new ShapeCreateEvent();
     public static UnityEvent CloseShapePanel = new UnityEvent();
-  
-    
+    public static UnityEvent OnProgressBarFull = new UnityEvent();
+
+
 }
 
 public class ShapeCreateEvent : UnityEvent<CreateShapeButton.StairTypes> { }
