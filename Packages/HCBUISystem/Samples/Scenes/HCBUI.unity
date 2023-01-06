@@ -794,6 +794,7 @@ MonoBehaviour:
   - {fileID: 1601406883749638949, guid: 33b34459bd0132c4ca09c067b1847a73, type: 3}
   - {fileID: 1601406883749638949, guid: adbfd2e6d13d134438e89ba60723cde5, type: 3}
   - {fileID: 1601406883749638949, guid: 59dd68eb753bf424cb63b4dff7793c35, type: 3}
+  NextLevelButtond: {fileID: 1094124034}
 --- !u!1001 &476136497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1189,6 +1190,7 @@ MonoBehaviour:
   Stat: {fileID: 11400000, guid: eda69cb11af37634aba5040d40895411, type: 2}
   BarImage: {fileID: 653835510}
   CurrentProgress: 0
+  ProgressBar: {fileID: 2111974736}
 --- !u!224 &704349656 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6269381138887868187, guid: 63a3d7e9ce581457d8b485b3b5b7c9d3, type: 3}
@@ -1914,8 +1916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -16.8, y: 297}
-  m_SizeDelta: {x: 179.7253, y: 82.3146}
+  m_AnchoredPosition: {x: -22, y: 221}
+  m_SizeDelta: {x: 207.7843, y: 117.2314}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1094124036
 MonoBehaviour:
@@ -1963,7 +1965,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 445180712}
         m_TargetAssemblyTypeName: ShapeCreator, Assembly-CSharp
-        m_MethodName: NextLevelButton
+        m_MethodName: NextLevelButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

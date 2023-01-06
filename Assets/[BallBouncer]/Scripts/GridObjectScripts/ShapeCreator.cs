@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class ShapeCreator : MonoBehaviour
+public class ShapeCreator : MonoBehaviour //NextLevelButton buradan ayrilacak.
 {
     #region Parameters
 
@@ -15,17 +15,27 @@ public class ShapeCreator : MonoBehaviour
     private List<GameObject> _instantiatedButtons = new List<GameObject>();
     private const int BUTTON_COUNT = 3;
     public GameObject[] Shapes;
+    public GameObject NextLevelButtond;
 
     #endregion
 
     private void OnEnable()
     { 
+        //Close NextLevelButton on start
+        LevelManager.Instance.OnLevelStart.AddListener(CloseNextLevelButton);
+        
+        //Open NextLevelButton on ProgressBarFull
+        EventManager.OnProgressBarFull.AddListener(OpenNextLevelButton);
+        
         EventManager.OnShapeCreated.AddListener(CreateShape);
         EventManager.CloseShapePanel.AddListener(CloseCreateShapePanel);
     }
 
     private void OnDisable()
     {
+        LevelManager.Instance.OnLevelStart.RemoveListener(CloseNextLevelButton);
+        EventManager.OnProgressBarFull.RemoveListener(OpenNextLevelButton);
+
         EventManager.OnShapeCreated.RemoveListener(CreateShape);
         EventManager.CloseShapePanel.RemoveListener(CloseCreateShapePanel);
 
@@ -68,8 +78,18 @@ public class ShapeCreator : MonoBehaviour
     
     
     
-    public void NextLevelButton()
+    public void NextLevelButtonClick()
     {
         GameManager.Instance.CompeleteStage(true);
+    }
+
+    public void OpenNextLevelButton()
+    {
+        NextLevelButtond.SetActive(true);
+    }
+    
+    public void CloseNextLevelButton()
+    {
+        NextLevelButtond.SetActive(false);
     }
 }

@@ -1,28 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using HCB.Core;
 using HCB.IncrimantalIdleSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MoneyProgressBar : MonoBehaviour
 {
-    private const float MAX_PROGRESS = 1000f;
+    private const float MAX_PROGRESS = 500f;
     [SerializeField] private IdleStat Stat;
     [Space, SerializeField] private Image BarImage;
 
     //[SerializeField] private RectTransform ProgressBar;
     [SerializeField] private float CurrentProgress;
+    
+    
 
     private bool _isFull;
 
     private void OnEnable()
     {
+        LevelManager.Instance.OnLevelStart.AddListener(ResetProgress);
         HCB.Core.EventManager.OnMoneyEarned.AddListener(Progress);
     }
 
     private void OnDisable()
     {
+        LevelManager.Instance.OnLevelStart.RemoveListener(ResetProgress);
+
         HCB.Core.EventManager.OnMoneyEarned.RemoveListener(Progress);
     }
 
@@ -45,5 +51,6 @@ public class MoneyProgressBar : MonoBehaviour
         CurrentProgress = 0;
         BarImage.fillAmount = 0;
         _isFull = false;
+        //gameObject.SetActive(false);
     }
 }

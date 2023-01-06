@@ -8,6 +8,7 @@ using HCB.PoolingSystem;
 using HCB.SplineMovementSystem;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BounceCollision : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class BounceCollision : MonoBehaviour
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
             EarnMoney(1);
             
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 50, ForceMode.Impulse);
             //ball.transform.DOScale(new Vector3(.5f, .5f, .5f), .5f).SetEase(Ease.OutBounce);
             
               //ball.transform.DOShakeScale(shakeDuration,shakeAmount,10,90,true);
@@ -46,10 +47,15 @@ public class BounceCollision : MonoBehaviour
         if (collision.collider.CompareTag("MediumBall"))
         {
             ChangeBlendShape(0, 100, BLEND_SHAPE_DURATION);
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 30, ForceMode.Impulse);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 50, ForceMode.Impulse);
             collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
             HapticManager.Haptic(HapticTypes.LightImpact);
             EarnMoney(4);
+            
+            // if(collision.gameObject.transform.localScale <  0)
+            // {
+            //     collision.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            // }
         }
         else
         {
