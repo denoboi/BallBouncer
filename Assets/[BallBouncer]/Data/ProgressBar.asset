@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StatID: ProgressBar
   InitialValue: 1
-  UpgradeMultiplier: 1.2
+  UpgradeMultiplier: 1.19
   InitialCost: 0
   CostMultiplier: 1
   ExchangeType: 1

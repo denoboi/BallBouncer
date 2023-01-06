@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using HCB.Core;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -63,5 +64,12 @@ public class ShapeCreator : MonoBehaviour
     public void CloseCreateShapePanel()
     {
         _createShapePanel.transform.DOMoveY(-500, .2f);
+    }
+    
+    
+    
+    public void NextLevelButton()
+    {
+        GameManager.Instance.CompeleteStage(true);
     }
 }

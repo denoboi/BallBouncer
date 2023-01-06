@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class MoneyProgressBar : MonoBehaviour
 {
-    private const float MAX_PROGRESS = 100f;
+    private const float MAX_PROGRESS = 1000f;
     [SerializeField] private IdleStat Stat;
     [Space, SerializeField] private Image BarImage;
 
-    [SerializeField] private RectTransform ProgressBar;
+    //[SerializeField] private RectTransform ProgressBar;
     [SerializeField] private float CurrentProgress;
 
     private bool _isFull;
@@ -38,5 +38,12 @@ public class MoneyProgressBar : MonoBehaviour
 
         _isFull = true;
         EventManager.OnProgressBarFull.Invoke();
+    }
+    
+    public void ResetProgress()
+    {
+        CurrentProgress = 0;
+        BarImage.fillAmount = 0;
+        _isFull = false;
     }
 }
