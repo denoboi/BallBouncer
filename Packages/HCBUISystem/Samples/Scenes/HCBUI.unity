@@ -1008,13 +1008,57 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4933556380829357410, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
 --- !u!224 &476136498 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4933556380829357411, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
   m_PrefabInstance: {fileID: 476136497}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &476136499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4933556381041655817, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
+  m_PrefabInstance: {fileID: 476136497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &476136500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4933556380533778885, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
+  m_PrefabInstance: {fileID: 476136497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &476136501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4933556380829357408, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
+  m_PrefabInstance: {fileID: 476136497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &476136502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476136501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed3c1452346926499001fd6fdb3a9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleStat: {fileID: 11400000, guid: 45f89776fc597b04eb978eadd4f4d2e2, type: 2}
+  StatLevelText: {fileID: 476136500}
+  StatCostText: {fileID: 476136499}
+  _canCreateBlock: 1
 --- !u!224 &567253986 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3359752864373630977, guid: 63ddab76943c8442d859605c43835dee, type: 3}
@@ -1190,7 +1234,6 @@ MonoBehaviour:
   Stat: {fileID: 11400000, guid: eda69cb11af37634aba5040d40895411, type: 2}
   BarImage: {fileID: 653835510}
   CurrentProgress: 0
-  ProgressBar: {fileID: 2111974736}
 --- !u!224 &704349656 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6269381138887868187, guid: 63a3d7e9ce581457d8b485b3b5b7c9d3, type: 3}

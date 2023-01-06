@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class MoneyProgressBar : MonoBehaviour
 {
-    private const float MAX_PROGRESS = 500f;
+    private const float MAX_PROGRESS = 800f;
     [SerializeField] private IdleStat Stat;
     [Space, SerializeField] private Image BarImage;
 

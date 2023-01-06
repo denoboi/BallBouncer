@@ -9,6 +9,7 @@ public class MergeBallButton : IdleUpgradeButton
     public bool _canMerge;
     protected override void OnEnable()
     {
+        
         HCB.Core.EventManager.OnMergeCheck.AddListener(MergeCheck);
         base.OnEnable();
     }

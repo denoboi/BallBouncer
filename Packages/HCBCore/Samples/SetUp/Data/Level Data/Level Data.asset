@@ -17,5 +17,3 @@ MonoBehaviour:
     LoadLevelID: Level 1
   - LevelTypes: 
     LoadLevelID: Level 2
-  - LevelTypes: 
-    LoadLevelID: Level 3

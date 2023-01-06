@@ -20,6 +20,8 @@ namespace HCB.Core
         public static UnityEvent OnBallDie = new UnityEvent();
         public static UnityEvent OnMediumBallDie = new UnityEvent();
         public static UnityEvent OnMoneyEarned = new UnityEvent();
+        
+        public static BoolEvent OnCreateShapeCheck = new BoolEvent();
   
         
 

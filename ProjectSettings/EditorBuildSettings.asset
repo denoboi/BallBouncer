@@ -22,8 +22,5 @@ EditorBuildSettings:
     guid: f66600453b5bbe54cab79face855fb64
   - enabled: 1
     path: Assets/[BallBouncer]/Levels/Level 2.unity
-    guid: 51508db94ed973a41b089065e26f4b1e
-  - enabled: 1
-    path: Assets/[BallBouncer]/Levels/Level 3.unity
-    guid: fbcff03b10b424c4f89275152779278b
+    guid: da54a5363bb4b204ebde25559eca6530
   m_configObjects: {}
