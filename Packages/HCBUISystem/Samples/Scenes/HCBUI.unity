@@ -3182,6 +3182,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1679639512}
     m_Modifications:
+    - target: {fileID: 3359752863940507116, guid: 63ddab76943c8442d859605c43835dee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359752863940507123, guid: 63ddab76943c8442d859605c43835dee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359752863940507123, guid: 63ddab76943c8442d859605c43835dee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -111.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3359752864373630976, guid: 63ddab76943c8442d859605c43835dee, type: 3}
       propertyPath: UIIPanelAnimation
       value: 
