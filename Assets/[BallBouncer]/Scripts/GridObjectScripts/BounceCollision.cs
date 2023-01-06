@@ -57,10 +57,6 @@ public class BounceCollision : MonoBehaviour
             //     collision.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             // }
         }
-        else
-        {
-            Debug.Log("No ball component found");
-        }
     }
 
     private void Start()
@@ -116,20 +112,22 @@ public class BounceCollision : MonoBehaviour
         HCB.Core.EventManager.OnMoneyEarned.Invoke();
         HCB.Core.EventManager.OnPlayerDataChange.Invoke();
         
-        CreateFloatingText("+" + value.ToString("N1") + " $", Color.green, .7f);
+        CreateFloatingText("+" + value.ToString("N1") + " $", .7f);
     }
     
-    public void CreateFloatingText(string s, Color color, float delay)
+    public void CreateFloatingText(string s, float delay)
     {
-        TextMeshPro text = PoolingSystem.Instance.InstantiateAPS("MoneyText",gameObject.transform.position + Vector3.up).GetComponentInChildren<TextMeshPro>();
+        GameObject text =
+            PoolingSystem.Instance.InstantiateAPS("MoneyText", gameObject.transform.position + Vector3.up);
         //text.transform.LookAt(Camera.main.transform);
-        text.SetText(s);
+        text.GetComponentInChildren<TextMeshPro>().DOFade(100, .01f);
+        text.GetComponentInChildren<TextMeshPro>().SetText(s);
         //text.DOFade(1, 1f);
-        text.color = color;
+        
         text.transform.DOMoveZ(text.transform.position.z + 2f, delay);
-        text.DOFade(0, delay / 2)
-            .SetDelay(delay / 2)
-            .OnComplete(() => PoolingSystem.Instance.DestroyAPS(text.gameObject));
+        text.GetComponentInChildren<TextMeshPro>().DOFade(0, delay)
+            .SetDelay(delay)
+            .OnComplete(() => PoolingSystem.Instance.DestroyAPS(text));
     }
     
     

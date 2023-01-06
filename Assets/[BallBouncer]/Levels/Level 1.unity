@@ -763,7 +763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &81894657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,7 +3530,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1961058673}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4800260085408111264, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3546,7 +3546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4800260085836388959, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4800260085836388959, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3558,7 +3558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4800260085836388959, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.21
+      value: -9.04
       objectReference: {fileID: 0}
     - target: {fileID: 4800260085836388959, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3590,11 +3590,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
---- !u!4 &435266078 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4800260085836388959, guid: 8b16c45842e58a44fb572bb0d719f5b3, type: 3}
-  m_PrefabInstance: {fileID: 435266077}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &460815683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8617,7 +8612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &987447745
 Transform:
   m_ObjectHideFlags: 0
@@ -8662,7 +8657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89069c9644ba2604d8172c87154ee8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _saveGridObjects: 0
+  _saveGridObjects: 1
 --- !u!114 &987447748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20192,10 +20187,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 435266078}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1968890296
 PrefabInstance:

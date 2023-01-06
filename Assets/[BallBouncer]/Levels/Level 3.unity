@@ -10156,7 +10156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89069c9644ba2604d8172c87154ee8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _saveGridObjects: 1
+  _saveGridObjects: 0
 --- !u!114 &987447748
 MonoBehaviour:
   m_ObjectHideFlags: 0
