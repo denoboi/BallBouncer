@@ -11,8 +11,6 @@ namespace HCB.IncrimantalIdleSystem.Examples
 {
     public class IdleUpgradeButton : IdleStatUpgraderBase
     {
-
-        
         
         private Button button;
         protected Button Button { get { return (button == null) ? button = GetComponent<Button>() : button; } }

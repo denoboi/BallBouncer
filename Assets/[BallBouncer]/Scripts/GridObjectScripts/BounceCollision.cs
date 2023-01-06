@@ -35,12 +35,18 @@ public class BounceCollision : MonoBehaviour
             EarnMoney(1);
             
             collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,1) * 50, ForceMode.Impulse);
-            collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
+            collision.gameObject.transform.localScale -= new Vector3(0.03f, 0.03f, 0.03f);
               
             HapticManager.Haptic(HapticTypes.LightImpact);
-              
-              if(collision.transform.localScale.magnitude <= 0)
-                  Destroy(collision.collider.gameObject);
+            
+
+            if (collision.gameObject.transform.localScale.x < 0 || collision.gameObject.transform.localScale.y < 0 ||
+                collision.gameObject.transform.localScale.z < 0)
+            {
+                Debug.Log("Destroyed");
+                Destroy(collision.collider.gameObject);
+            }
+                  
 
         }
         
@@ -51,9 +57,14 @@ public class BounceCollision : MonoBehaviour
             collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
             HapticManager.Haptic(HapticTypes.LightImpact);
             EarnMoney(4);
-            
-            if(collision.transform.localScale.magnitude <= 0)
+
+            if (collision.gameObject.transform.localScale.x < 0 || collision.gameObject.transform.localScale.y < 0 ||
+                collision.gameObject.transform.localScale.z < 0)
+            {
+                Debug.Log("Destroyed");
                 Destroy(collision.collider.gameObject);
+            }
+                
         }
     }
 
