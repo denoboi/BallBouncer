@@ -8,7 +8,7 @@ public class ResetEconomy : MonoBehaviour
 {
     private void OnEnable()
     {
-        LevelManager.Instance.OnLevelFinish.AddListener(ResetPlayerPrefs);
+        //LevelManager.Instance.OnLevelFinish.AddListener(ResetPlayerPrefs);
         LevelManager.Instance.OnLevelStart.AddListener(ResetPlayerPrefs);
         
         GameManager.Instance.OnGameStart.AddListener(ResetPlayerPrefs);
@@ -21,7 +21,7 @@ public class ResetEconomy : MonoBehaviour
         if(Managers.Instance == null)
             return;
         
-        LevelManager.Instance.OnLevelFinish.RemoveListener(ResetPlayerPrefs);
+        //LevelManager.Instance.OnLevelFinish.RemoveListener(ResetPlayerPrefs);
         LevelManager.Instance.OnLevelStart.RemoveListener(ResetPlayerPrefs);
         
         GameManager.Instance.OnGameStart.RemoveListener(ResetPlayerPrefs);
@@ -36,6 +36,8 @@ public class ResetEconomy : MonoBehaviour
         GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] = 0;
 
     }
+    
+    
 
     
 }

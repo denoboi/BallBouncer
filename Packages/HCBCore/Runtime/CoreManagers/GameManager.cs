@@ -82,7 +82,7 @@ namespace HCB.Core
             PlayerPrefs.DeleteKey("MergeBalls");
             PlayerPrefs.DeleteKey("SpawnBall");
 
-            PlayerData.CurrencyData[ExchangeType.Coin] = 0;
+            
         }
 
         public void StartGame()
