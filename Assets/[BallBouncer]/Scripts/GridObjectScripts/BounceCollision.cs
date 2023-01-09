@@ -121,7 +121,7 @@ public class BounceCollision : MonoBehaviour
             
         }
         HCB.Core.EventManager.OnMoneyEarned.Invoke();
-        HCB.Core.EventManager.OnPlayerDataChange.Invoke();
+       HCB.Core.EventManager.OnPlayerDataChange.Invoke();
         
         CreateFloatingText("+" + value.ToString("N1") + " $", .7f);
     }

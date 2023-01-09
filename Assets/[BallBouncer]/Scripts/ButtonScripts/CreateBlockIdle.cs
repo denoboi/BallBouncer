@@ -8,6 +8,9 @@ using UnityEngine;
 public class CreateBlockIdle : IdleUpgradeButton
 {
     public bool _canCreateBlock;
+    
+  
+    
     protected override void OnEnable()
     {
         LevelManager.Instance.OnLevelStart.AddListener(()=> HCB.Core.EventManager.OnCreateShapeCheck.Invoke(true));

@@ -13,6 +13,7 @@ namespace HCB.IncrimantalIdleSystem
         private void Start()
         {
             Initialize();
+            
         }
 
         public virtual void UpgradeStat()

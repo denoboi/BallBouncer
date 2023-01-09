@@ -12,6 +12,7 @@ namespace HCB.IncrimantalIdleSystem.Examples
     public class IdleUpgradeButton : IdleStatUpgraderBase
     {
         
+        
         private Button button;
         protected Button Button { get { return (button == null) ? button = GetComponent<Button>() : button; } }
 
@@ -51,12 +52,17 @@ namespace HCB.IncrimantalIdleSystem.Examples
                 Button.interactable = GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] >= IdleStat.CurrentCost;
         }
 
+       
+        
+        
         private void InitializeButton()
         {
             Button.interactable = GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] >= IdleStat.CurrentCost;
-            //StatIDText.SetText(IdleStat.StatID);
+            
             StatLevelText.SetText("lvl " + (IdleStat.Level + 1));
-            StatCostText.SetText(HCBUtilities.ScoreShow(IdleStat.CurrentCost));
+           // StatCostText.SetText(HCBUtilities.ScoreShow(IdleStat.CurrentCost));
+            StatCostText.SetText(IdleStat.CurrentCost + "$");
+
         }
 
         public override void UpgradeStat()
@@ -78,6 +84,8 @@ namespace HCB.IncrimantalIdleSystem.Examples
             Button.interactable = GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] > IdleStat.CurrentCost;
             StatLevelText.SetText("lvl " + IdleStat.Level);
             StatCostText.SetText(IdleStat.CurrentCost + "$");
+            
+            EventManager.OnPlayerDataChange.Invoke();;
         }
     }
 }

@@ -13,11 +13,11 @@ public class IncomeTextController : MonoBehaviour
 
     private void OnEnable()
     {
-        HCB.Core.EventManager.OnPlayerDataChange.AddListener(UpdateText);
+        //HCB.Core.EventManager.OnPlayerDataChange.AddListener(UpdateText);
 
         SceneController.Instance.OnSceneLoaded.AddListener(UpdateText);
 
-        
+       
     }
 
     private void OnDisable()
@@ -25,15 +25,18 @@ public class IncomeTextController : MonoBehaviour
         if (Managers.Instance == null)
             return;
 
-        HCB.Core.EventManager.OnPlayerDataChange.RemoveListener(UpdateText);
+       // HCB.Core.EventManager.OnPlayerDataChange.RemoveListener(UpdateText);
 
         SceneController.Instance.OnSceneLoaded.RemoveListener(UpdateText);
+        
+        //LevelManager.Instance.OnLevelStart.RemoveListener(UpdateText);
+
     }
 
 
     void UpdateText()
     {
         CoinText.text = GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin].ToString("N1");
-        
+        Debug.LogError(GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin].ToString("N1"));
     }
 }

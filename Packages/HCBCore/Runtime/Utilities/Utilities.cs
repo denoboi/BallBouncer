@@ -92,7 +92,7 @@ namespace HCB.Utilities
                 else Score = System.Math.Floor(Score / 100f) / 10f;
 
             if (Score == System.Math.Floor(Score))
-                result = Score.ToString() + " $" + ScoreNames[i];
+                result = Score.ToString() + ScoreNames[i];
             else result = Score.ToString("F1") + ScoreNames[i];
             return result;
         }

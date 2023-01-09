@@ -3,16 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using HCB.Core;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResetEconomy : MonoBehaviour
 {
     private void OnEnable()
     {
-        //LevelManager.Instance.OnLevelFinish.AddListener(ResetPlayerPrefs);
-        LevelManager.Instance.OnLevelStart.AddListener(ResetPlayerPrefs);
-        
-        GameManager.Instance.OnGameStart.AddListener(ResetPlayerPrefs);
-        
+        LevelManager.Instance.OnLevelFinish.AddListener(ResetPlayerPrefs);
+        //SceneController.Instance.OnSceneLoaded.AddListener(ResetPlayerPrefs);
         
     }
 
@@ -21,10 +19,10 @@ public class ResetEconomy : MonoBehaviour
         if(Managers.Instance == null)
             return;
         
-        //LevelManager.Instance.OnLevelFinish.RemoveListener(ResetPlayerPrefs);
-        LevelManager.Instance.OnLevelStart.RemoveListener(ResetPlayerPrefs);
+        LevelManager.Instance.OnLevelFinish.RemoveListener(ResetPlayerPrefs);
         
-        GameManager.Instance.OnGameStart.RemoveListener(ResetPlayerPrefs);
+        //SceneController.Instance.OnSceneLoaded.RemoveListener(ResetPlayerPrefs);
+
     }
 
     private void ResetPlayerPrefs()
@@ -33,7 +31,9 @@ public class ResetEconomy : MonoBehaviour
         PlayerPrefs.DeleteKey("MergeBalls");
         PlayerPrefs.DeleteKey("SpawnBall");
 
-        GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] = 0;
+        GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] = 20;
+        
+        HCB.Core.EventManager.OnPlayerDataChange.Invoke();
 
     }
     

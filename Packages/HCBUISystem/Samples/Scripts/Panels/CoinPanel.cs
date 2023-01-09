@@ -28,6 +28,10 @@ namespace HCB.UI
                 return;
 
             EventManager.OnPlayerDataChange.AddListener(UpdateBalance);
+            LevelManager.Instance.OnLevelStart.AddListener(ShowPanel);
+            
+            GameManager.Instance.OnStageSuccess.AddListener(HidePanel);
+
         }
 
         private void OnDisable()
@@ -35,7 +39,12 @@ namespace HCB.UI
             if (Managers.Instance == null)
                 return;
 
-            EventManager.OnPlayerDataChange.RemoveListener(UpdateBalance);           
+            EventManager.OnPlayerDataChange.RemoveListener(UpdateBalance);
+            LevelManager.Instance.OnLevelStart.RemoveListener(ShowPanel);
+            
+            GameManager.Instance.OnStageSuccess.RemoveListener(HidePanel);
+
+
         }
 
         private void UpdateBalance()
