@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -64,7 +65,7 @@ namespace HCB.Core
         [ReadOnly]
         [ShowInInspector]
         public bool IsStageCompleted { get { return isStageCompleted; } set { isStageCompleted = value; } }
-
+        
         private void OnEnable()
         {
             SceneController.Instance.OnSceneLoaded.AddListener(() => IsStageCompleted = false);
@@ -73,6 +74,15 @@ namespace HCB.Core
         private void OnDisable()
         {
             SceneController.Instance.OnSceneLoaded.RemoveListener(() => IsStageCompleted = false);
+        }
+
+        private void Start()
+        {
+            PlayerPrefs.DeleteKey("CreateShape");
+            PlayerPrefs.DeleteKey("MergeBalls");
+            PlayerPrefs.DeleteKey("SpawnBall");
+
+            PlayerData.CurrencyData[ExchangeType.Coin] = 0;
         }
 
         public void StartGame()
@@ -110,13 +120,19 @@ namespace HCB.Core
             else OnStageFail.Invoke();
 
             IsStageCompleted = true;
+            
+            PlayerData.CurrencyData[ExchangeType.Coin] = 0;
+            
         }
 
         private void OnApplicationPause(bool pause)
         {
+            
             if (pause)
-            {                
+            {   
+                
                 SaveLoadManager.SavePDP(playerData, SavedFileNameHolder.PlayerData);
+                
             }
         }
 
@@ -126,11 +142,7 @@ namespace HCB.Core
             // PlayerPrefs.DeleteKey("CreateShape");
             // PlayerPrefs.DeleteKey("MergeBalls");
             // PlayerPrefs.DeleteKey("SpawnBall");
-
-
             
-
-
         }        
     }
 }

@@ -1209,27 +1209,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 919132148460192878, guid: 29c45023f9b97f242a84f1ae8c536957, type: 3}
       propertyPath: m_Size.x
-      value: 3.1956234
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132148460192878, guid: 29c45023f9b97f242a84f1ae8c536957, type: 3}
-      propertyPath: m_Size.y
-      value: 1.0288126
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132148460192878, guid: 29c45023f9b97f242a84f1ae8c536957, type: 3}
-      propertyPath: m_Size.z
-      value: 3.0558686
+      value: 3.1251757
       objectReference: {fileID: 0}
     - target: {fileID: 919132148460192878, guid: 29c45023f9b97f242a84f1ae8c536957, type: 3}
       propertyPath: m_Center.x
-      value: -0.25147295
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132148460192878, guid: 29c45023f9b97f242a84f1ae8c536957, type: 3}
-      propertyPath: m_Center.y
-      value: 0.21554795
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132148460192878, guid: 29c45023f9b97f242a84f1ae8c536957, type: 3}
-      propertyPath: m_Center.z
-      value: -0.148202
+      value: -0.20871246
       objectReference: {fileID: 0}
     - target: {fileID: 2875507529537605128, guid: 29c45023f9b97f242a84f1ae8c536957, type: 3}
       propertyPath: m_Name

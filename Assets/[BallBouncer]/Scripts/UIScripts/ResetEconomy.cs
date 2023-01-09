@@ -10,6 +10,10 @@ public class ResetEconomy : MonoBehaviour
     {
         LevelManager.Instance.OnLevelFinish.AddListener(ResetPlayerPrefs);
         LevelManager.Instance.OnLevelStart.AddListener(ResetPlayerPrefs);
+        
+        GameManager.Instance.OnGameStart.AddListener(ResetPlayerPrefs);
+        
+        
     }
 
     private void OnDisable()
@@ -19,6 +23,8 @@ public class ResetEconomy : MonoBehaviour
         
         LevelManager.Instance.OnLevelFinish.RemoveListener(ResetPlayerPrefs);
         LevelManager.Instance.OnLevelStart.RemoveListener(ResetPlayerPrefs);
+        
+        GameManager.Instance.OnGameStart.RemoveListener(ResetPlayerPrefs);
     }
 
     private void ResetPlayerPrefs()
@@ -27,9 +33,9 @@ public class ResetEconomy : MonoBehaviour
         PlayerPrefs.DeleteKey("MergeBalls");
         PlayerPrefs.DeleteKey("SpawnBall");
 
-        GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] /= 3;
+        GameManager.Instance.PlayerData.CurrencyData[HCB.ExchangeType.Coin] = 0;
 
     }
-    
+
     
 }
