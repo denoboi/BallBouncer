@@ -16,6 +16,8 @@ public class IncomeTextController : MonoBehaviour
         HCB.Core.EventManager.OnPlayerDataChange.AddListener(UpdateText);
 
         SceneController.Instance.OnSceneLoaded.AddListener(UpdateText);
+        
+        LevelManager.Instance.OnLevelStart.AddListener(UpdateText);
 
         
     }
@@ -28,6 +30,9 @@ public class IncomeTextController : MonoBehaviour
         HCB.Core.EventManager.OnPlayerDataChange.RemoveListener(UpdateText);
 
         SceneController.Instance.OnSceneLoaded.RemoveListener(UpdateText);
+        
+        LevelManager.Instance.OnLevelStart.RemoveListener(UpdateText);
+
     }
 
 

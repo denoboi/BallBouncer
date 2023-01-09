@@ -14,6 +14,8 @@ public class BounceCollision : MonoBehaviour
 {
     private SkinnedMeshRenderer[] _meshRenderer;
     private Tween _blendShapeTween;
+    [SerializeField] private AudioClip _audioClip;
+    private AudioSource _audioSource;
 
     private const float BLEND_SHAPE_DURATION = .1f;
     private const float BLEND_SHAPE_BACK_EASE = .3f;
@@ -24,8 +26,8 @@ public class BounceCollision : MonoBehaviour
     public float shakeDuration = 0.5f;
 
     [SerializeField] private float _forceAmount = 30f;
-   
-
+    
+  
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("WeakBall"))
@@ -38,7 +40,7 @@ public class BounceCollision : MonoBehaviour
             collision.gameObject.transform.localScale -= new Vector3(0.03f, 0.03f, 0.03f);
               
             HapticManager.Haptic(HapticTypes.LightImpact);
-            
+            _audioSource.Play();
 
             if (collision.gameObject.transform.localScale.x < 0 || collision.gameObject.transform.localScale.y < 0 ||
                 collision.gameObject.transform.localScale.z < 0)
@@ -58,6 +60,7 @@ public class BounceCollision : MonoBehaviour
             collision.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
             HapticManager.Haptic(HapticTypes.LightImpact);
             EarnMoney(4);
+            _audioSource.PlayOneShot(_audioClip);
 
             if (collision.gameObject.transform.localScale.x < 0 || collision.gameObject.transform.localScale.y < 0 ||
                 collision.gameObject.transform.localScale.z < 0)
@@ -74,6 +77,8 @@ public class BounceCollision : MonoBehaviour
     {
         _meshRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
         _scaleTweenID = GetInstanceID() + "scaleUp";
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
 

@@ -121,7 +121,7 @@ namespace HCB.Core
 
             IsStageCompleted = true;
             
-            PlayerData.CurrencyData[ExchangeType.Coin] = 0;
+            //PlayerData.CurrencyData[ExchangeType.Coin] = 0;
             
         }
 
