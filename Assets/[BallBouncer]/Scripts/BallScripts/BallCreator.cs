@@ -14,9 +14,7 @@ public class BallCreator : MonoBehaviour
     [SerializeField] private Transform _ballSpawnPoint2;
     public Vector3 _ballDirection;
     
-   
     
-  
 
     private void OnEnable()
     {

@@ -16,5 +16,5 @@ MonoBehaviour:
   InitialValue: 1
   UpgradeMultiplier: 1.2
   InitialCost: 10
-  CostMultiplier: 1.2
+  CostMultiplier: 1.403
   ExchangeType: 1

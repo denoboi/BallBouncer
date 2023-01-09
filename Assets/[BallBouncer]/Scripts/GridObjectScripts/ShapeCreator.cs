@@ -33,6 +33,8 @@ public class ShapeCreator : MonoBehaviour //NextLevelButton buradan ayrilacak.
 
     private void OnDisable()
     {
+        if(Managers.Instance == null) return;
+        
         LevelManager.Instance.OnLevelStart.RemoveListener(CloseNextLevelButton);
         EventManager.OnProgressBarFull.RemoveListener(OpenNextLevelButton);
 

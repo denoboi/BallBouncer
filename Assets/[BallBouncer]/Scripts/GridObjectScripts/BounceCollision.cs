@@ -45,6 +45,7 @@ public class BounceCollision : MonoBehaviour
             {
                 Debug.Log("Destroyed");
                 Destroy(collision.collider.gameObject);
+                BallManager.Instance.NumWeakBalls--;
             }
                   
 
@@ -63,6 +64,7 @@ public class BounceCollision : MonoBehaviour
             {
                 Debug.Log("Destroyed");
                 Destroy(collision.collider.gameObject);
+                BallManager.Instance.NumMediumBalls--;
             }
                 
         }

@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[BallBouncer]/Levels/Level 2.unity
     guid: da54a5363bb4b204ebde25559eca6530
+  - enabled: 1
+    path: Assets/[BallBouncer]/Levels/Level 3.unity
+    guid: 569b05b00b62ac442abd00a6268d2918
+  - enabled: 1
+    path: Assets/[BallBouncer]/Levels/Level 4.unity
+    guid: 8e299c610be718c4aaa0a5d260651adb
+  - enabled: 1
+    path: Assets/[BallBouncer]/Levels/Level 5.unity
+    guid: 7438e126d12323a4bb9dfd32e3ff4f4e
   m_configObjects: {}

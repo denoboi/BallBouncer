@@ -123,8 +123,14 @@ namespace HCB.Core
         private void OnApplicationQuit()
         {
             SaveLoadManager.SavePDP(playerData, SavedFileNameHolder.PlayerData);
+            // PlayerPrefs.DeleteKey("CreateShape");
+            // PlayerPrefs.DeleteKey("MergeBalls");
+            // PlayerPrefs.DeleteKey("SpawnBall");
+
+
             
-            
+
+
         }        
     }
 }
